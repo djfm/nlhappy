@@ -12,4 +12,9 @@ class Language extends \Illuminate\Database\Eloquent\Model
 	{
 		return $this->hasMany('PS\Model\NewsletterLanguage');
 	}
+
+	public function articles()
+	{
+		return $this->belongsToMany('PS\Model\NewsletterArticle', 'ArticleLanguage', 'article_id', 'language_id');
+	}
 };

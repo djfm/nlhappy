@@ -20,6 +20,17 @@ class NewsletterLanguage extends \Illuminate\Database\Eloquent\Model
 
 	public function articles()
 	{
+		//return $this->language->articles();
 		return $this->hasMany('PS\Model\NewsletterArticle');
+		/*
+		return $this->hasManyThrough(
+			'PS\Model\NewsletterArticle',
+			'PS\Model\ArticleLanguage'
+		);*/
+	}
+
+	public function fetchArticles()
+	{
+
 	}
 };
